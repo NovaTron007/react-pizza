@@ -1,10 +1,11 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
-
+import { Navbar } from "./Navbar/Navbar";
+import { Banner } from "./Banner/Banner";
 const GlobalStyle = createGlobalStyle`
  body{
-   background-color: blue;
    font-family: 'Open Sans', sans-serif;
+   margin: 0;
  }
  h1,h2,h3{
   font-family: 'Open Sans', sans-serif;
@@ -17,7 +18,8 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>Hello</h1>
+      <Navbar />
+      <Banner />
     </>
   );
 }
