@@ -1,3 +1,8 @@
+## Setup
+
+- npm install styled-components
+- Delete App.css
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
