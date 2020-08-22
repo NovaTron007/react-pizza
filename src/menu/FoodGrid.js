@@ -9,7 +9,7 @@ export const FoodGrid = styled.div`
 `;
 
 // Food component now has access to title style
-export const Food = styled(Title)`
+export const Food = styled.div`
   height: 100px;
   padding: 10px;
   font-size: 20px;
@@ -33,7 +33,7 @@ export const Food = styled(Title)`
 `;
 
 // label with absolute to avoid stretching label
-export const FoodLabel = styled.div`
+export const FoodLabel = styled(Title)`
   position: absolute;
   padding: 5px;
   background-color: rgba(255, 255, 255, 0.8);
