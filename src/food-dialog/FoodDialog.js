@@ -1,3 +1,4 @@
+// FoodDialog controls the modal and reusable components
 import React from "react";
 import styled from "styled-components";
 import { FoodLabel } from "../menu/FoodGrid";
@@ -87,7 +88,7 @@ export function FoodDialog({ openFood, setOpenFood }) {
         </DialogBanner>
         <DialogContent></DialogContent>
         <DialogFooter>
-          <ConfirmButton>Order</ConfirmButton>
+          <ConfirmButton>Add to Order</ConfirmButton>
         </DialogFooter>
       </Dialog>
     </>
