@@ -73,13 +73,25 @@ const DialogBannerName = styled(FoodLabel)`
 `;
 
 // receive states from App.js
-export function FoodDialog({ openFood, setOpenFood }) {
+export function FoodDialog({ openFood, setOpenFood, orders, setOrders }) {
   // when clicked on dialog shadow
   function close() {
     setOpenFood();
   }
 
-  return openFood ? (
+  if (!openFood) return null;
+
+  // initialise order
+  const order = {
+    name: openFood.name
+  };
+  // add order
+  function addToOrder() {
+    setOrders([...orders, order]); // spread: orders appended with new order
+    close();
+  }
+
+  return (
     <>
       <DialogShadow onClick={close} />
       <Dialog>
@@ -88,9 +100,9 @@ export function FoodDialog({ openFood, setOpenFood }) {
         </DialogBanner>
         <DialogContent></DialogContent>
         <DialogFooter>
-          <ConfirmButton>Add to Order</ConfirmButton>
+          <ConfirmButton onClick={addToOrder}>Add to Order</ConfirmButton>
         </DialogFooter>
       </Dialog>
     </>
-  ) : null;
+  );
 }
