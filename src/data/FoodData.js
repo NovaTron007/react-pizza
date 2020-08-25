@@ -1,44 +1,59 @@
+export function formatPrice(price) {
+  return price.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD"
+  });
+}
+
 // menu data
 export const foodItems = [
   {
     name: "Cheese Pizza",
     img: "/img/pizza.png",
-    section: "Pizza"
+    section: "Pizza",
+    price: 3.5
   },
   {
     name: "Pepperoni Pizza",
     img: "/img/pizza2.jpg",
-    section: "Pizza"
+    section: "Pizza",
+    price: 4
   },
   {
     name: "Chicken Pizza",
     img: "/img/chicken-pizza.jpg",
-    section: "Pizza"
+    section: "Pizza",
+    price: 4
   },
   {
     name: "Veggie Pizza",
     img: "/img/healthy-pizza.jpg",
-    section: "Pizza"
+    section: "Pizza",
+    price: 4.5
   },
   {
     name: "Gyro",
     img: "/img/Gyro.jpg",
-    section: "Sandwich"
+    section: "Sandwich",
+    price: 4.5
   },
   {
     name: "Burger",
     img: "/img/burger.jpg",
-    section: "Sandwich"
+    section: "Sandwich",
+    price: 4.5
   },
   {
     name: "Sandwich",
     img: "/img/sandwich.jpg",
-    section: "Sandwich"
+    section: "Sandwich",
+    price: 6
   },
   {
     name: "Fries",
     img: "/img/fries.jpg",
-    section: "Sides"
+    section: "Sides",
+    price: 2
   }
 ];
 

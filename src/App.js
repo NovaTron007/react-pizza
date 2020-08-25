@@ -8,14 +8,17 @@ import { Order } from "./order/Order";
 // import global styles
 import { GlobalStyle } from "./styles/GlobalStyle";
 
-// import hooks
+// import hooks: to 'hook' into react state, w/o classes. Reuse stateful behaviour between components
 import { useOpenFood } from "./hooks/useOpenFood";
 import { useOrders } from "./hooks/useOrders";
+import { useTitle } from "./hooks/useTitle";
 
 function App() {
   // initialise state, import hook
-  const openFood = useOpenFood();
-  const orders = useOrders();
+  const openFood = useOpenFood(); // get opened food in popup
+  const orders = useOrders(); // get orders
+
+  useTitle({ ...openFood, ...orders }); // spread to pass data to hook
 
   // send props to components
   return (

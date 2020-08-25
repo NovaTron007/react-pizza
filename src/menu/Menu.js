@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { foods } from "../data/FoodData"; // bring in data to loop
 import { Food, FoodGrid, FoodLabel } from "./FoodGrid"; // food grid styled components in FoodGrid file
+import { formatPrice } from "../data/FoodData"; // use to format price
 
 const MenuStyled = styled.div`
   height: 1000px;
@@ -20,12 +21,15 @@ export function Menu({ setOpenFood }) {
             {/* loop the food names */}
             {foods.map(food => (
               <Food
-                 img={food.img}
-                 onClick={() => {
-                 setOpenFood(food);// pass whole object to access all data
+                img={food.img}
+                onClick={() => {
+                  setOpenFood(food); // pass whole object to access all data
                 }}
               >
-                <FoodLabel>{food.name}</FoodLabel>
+                <FoodLabel>
+                  <div>{food.name}</div>
+                  <div>{formatPrice(food.price)}</div>
+                </FoodLabel>
               </Food>
             ))}
           </FoodGrid>

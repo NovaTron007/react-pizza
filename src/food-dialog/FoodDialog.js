@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { FoodLabel } from "../menu/FoodGrid";
 import { pizzaRed } from "../styles/colours";
 import { Title } from "../styles/title";
+import { formatPrice } from "../data/FoodData"; // use to format price
 
 // max-height set 100px of viewport minus 100px to create gap
 // left calc half screen width minus 250px of div's with ie 500px
@@ -83,7 +84,7 @@ export function FoodDialog({ openFood, setOpenFood, orders, setOrders }) {
 
   // initialise order
   const order = {
-    name: openFood.name
+    ...openFood // get all properties using spread
   };
   // add order
   function addToOrder() {
@@ -100,7 +101,7 @@ export function FoodDialog({ openFood, setOpenFood, orders, setOrders }) {
         </DialogBanner>
         <DialogContent></DialogContent>
         <DialogFooter>
-          <ConfirmButton onClick={addToOrder}>Add to Order</ConfirmButton>
+          <ConfirmButton onClick={addToOrder}>Add to Order: {formatPrice(openFood.price)}</ConfirmButton>
         </DialogFooter>
       </Dialog>
     </>
